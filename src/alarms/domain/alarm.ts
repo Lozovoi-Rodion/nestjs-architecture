@@ -7,4 +7,3 @@ export class Alarm {
     public severity: AlarmSeverity,
   ) {}
 }
- 
