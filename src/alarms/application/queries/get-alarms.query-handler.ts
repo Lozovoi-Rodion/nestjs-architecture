@@ -10,6 +10,7 @@ export class GetAlarmsQueryHandler
   constructor(private readonly alarmRepository: AlarmRepository) {}
 
   async execute(query: GetAlarmsQuery): Promise<Alarm[]> {
+    console.log(`${query} not in use`);
     return this.alarmRepository.findAll();
   }
 }
