@@ -1,7 +1,9 @@
-export class CreateAlarmDto {
+export class AlarmReadModel {
+  id: string;
   name: string;
   severity: string;
-  triggeredAt: Date;
+  triggeredAt: string;
+  isAcknowledged: boolean;
   items: Array<{
     name: string;
     type: string;

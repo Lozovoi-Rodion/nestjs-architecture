@@ -22,7 +22,12 @@ export class CreateAlarmCommandHandler
       `Processing "CreateAlarmCommand": ${JSON.stringify(command)}`,
     );
 
-    const alarm = this.alarmFactory.create(command.name, command.severity);
+    const alarm = this.alarmFactory.create(
+      command.name,
+      command.severity,
+      command.triggeredAt,
+      command.items,
+    );
     const newAlarm = this.alarmRepository.save(alarm);
 
     // temporarily
