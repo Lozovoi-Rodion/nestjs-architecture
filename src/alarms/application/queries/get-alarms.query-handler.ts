@@ -1,6 +1,5 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { GetAlarmsQuery } from './get-alarms.query';
-import { Alarm } from 'src/alarms/domain/alarm';
 import { FindAlarmsRepository } from '../ports/find-alarm.repository';
 import { AlarmReadModel } from 'src/alarms/domain/read-models/alarm.read-model';
 

@@ -1,4 +1,4 @@
-version: "3"
+version: '3.8'
 services:
   write-db:
     image: postgres
@@ -9,6 +9,15 @@ services:
   read-db:
     image: mongo
     ports:
-      - 27017:27017  
+      - 27017:27017
     environment:
       - MONGODB_DATABASE=vf-read-db
+  event-store:
+    image: mongo:6.0.4
+    ports:
+      - 27018:27017
+    environment:
+      - MONGODB_DATABSE=vf-event-store
+    command: mongod --replSet vg-event-store-repl-set
+    volumes:
+      - ./scripts/event-store-mongoinit.js:/docker-entrypoint-initdb.d/mongo-init.js:ro

@@ -6,9 +6,10 @@ import { CoreModule } from './core/core.module';
 import { AlarmsModule } from './alarms/application/alarms.module';
 import { ApplicationBootstrapOptions } from './common/interfaces/application-bootstrap-options.interface';
 import { AlarmsInfrastructureModule } from './alarms/infrastracture/alarms-infrastracture.module';
+import { SharedModule } from './shared/shared.module';
 
 @Module({
-  imports: [CqrsModule.forRoot(), CoreModule],
+  imports: [CqrsModule.forRoot(), CoreModule, SharedModule],
   controllers: [AppController],
   providers: [AppService],
 })
