@@ -1,14 +1,7 @@
-import {
-  CommandHandler,
-  EventBus,
-  EventPublisher,
-  ICommandHandler,
-} from '@nestjs/cqrs';
+import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
 import { CreateAlarmCommand } from './create-alarm.command';
 import { Logger } from '@nestjs/common';
-import { CreateAlarmRepository } from '../ports/create-alarm.repository';
 import { AlarmFactory } from 'src/alarms/domain/factories/alarm.factory';
-import { AlarmCreatedEvent } from 'src/alarms/domain/events/alarm-created.event';
 
 @CommandHandler(CreateAlarmCommand)
 export class CreateAlarmCommandHandler
