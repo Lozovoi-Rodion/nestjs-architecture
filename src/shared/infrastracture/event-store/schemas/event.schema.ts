@@ -5,7 +5,7 @@ export type EventDocument = HydratedDocument<Event>;
 
 @Schema({
   timestamps: {
-    createdAt: false,
+    createdAt: true,
     updatedAt: false,
   },
 })
